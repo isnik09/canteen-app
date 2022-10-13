@@ -5,12 +5,15 @@ import './pages/book-slot.dart';
 import './pages/add-card-number.dart';
 import './pages/time-select.dart';
 import './pages/show-receipt.dart';
-// ignore: unused_import
-import './theme-data.dart';
+import '../theme-data.dart';
 
 void main() {
   runApp(
     MaterialApp(
+      theme: ThemeData(
+        scaffoldBackgroundColor: BG,
+      ),
+      darkTheme: ThemeData.dark(),
       title: 'Canteen App',
       initialRoute: '/',
       routes: {
@@ -30,10 +33,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // ignore: prefer_const_constructors
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
-      theme: ThemeData(primarySwatch: Colors.lime),
+      home: const HomePage(),
     );
   }
 }
