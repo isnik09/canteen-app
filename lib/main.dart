@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import './pages/captcha-page.dart';
 import 'package:flutter/material.dart';
 import './pages/home-page.dart';
@@ -11,9 +13,30 @@ void main() {
   runApp(
     MaterialApp(
       theme: ThemeData(
+        useMaterial3: true,
+        textButtonTheme: TextButtonThemeData(
+          style: TextButton.styleFrom(
+            textStyle: TextStyle(
+              fontSize: 14,
+              fontWeight: FontWeight.bold,
+            ),
+            primary: Colors.black,
+          ),
+        ),
         scaffoldBackgroundColor: BG,
+        textTheme: const TextTheme(
+          button: TextStyle(fontSize: 14.0, fontWeight: FontWeight.bold),
+          bodyText2: TextStyle(fontSize: 14.0, fontWeight: FontWeight.normal),
+        ),
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+            primary: ACCENTCOLOUR,
+            onPrimary: Colors.black,
+            textStyle: const TextStyle(
+                color: Colors.black, fontWeight: FontWeight.bold, fontSize: 15),
+          ),
+        ),
       ),
-      darkTheme: ThemeData.dark(),
       title: 'Canteen App',
       initialRoute: '/',
       routes: {
@@ -29,13 +52,12 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    // ignore: prefer_const_constructors
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
+      debugShowCheckedModeBanner: true,
       home: const HomePage(),
     );
   }
