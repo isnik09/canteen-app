@@ -3,7 +3,6 @@ import 'package:canteen_app/theme-data.dart';
 import 'package:flutter/material.dart';
 import '../asset-data.dart';
 import '../custom-widgets/circles.dart';
-import 'package:canteen_app/main.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -53,134 +52,128 @@ class HomePage extends StatelessWidget {
                   child: const Text('Book appointment'),
                 ),
               ),
-              Container(
-                child: Stack(
-                  fit: StackFit.loose,
-                  clipBehavior: Clip.none,
-                  alignment: Alignment.center,
-                  children: [
-                    Positioned(
-                      right: -100,
-                      bottom: -200,
-                      child: Image.asset(line_image),
-                    ),
-                    const Positioned(
-                      child: circle(),
-                      bottom: -110,
-                      left: -100,
-                    ),
-                    BlurryContainer(
-                      child: Container(
-                        child: ListView(
-                          shrinkWrap: true,
-                          physics: NeverScrollableScrollPhysics(),
-                          padding: EdgeInsets.symmetric(
-                              vertical: 15, horizontal: 10),
-                          children: [
-                            Text("Recent receipts",
-                                style: TextStyle(
-                                    fontSize: 21, fontWeight: FontWeight.bold)),
-                            Padding(
-                              padding: const EdgeInsets.symmetric(
-                                  vertical: 5, horizontal: 0),
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Container(
-                                    width: SCREENWIDTH * 0.45,
-                                    child: Text(
-                                        'Your slot has been booked for 23rd Oct 2022 12:00-12:30',
-                                        style: TextStyle(
-                                            fontSize: 14,
-                                            fontWeight: FontWeight.w500)),
-                                  ),
-                                  TextButton(
-                                    onPressed: () {
-                                      Navigator.pushNamed(
-                                          context, '/show-receipt');
-                                    },
-                                    child: const Text('VIEW RECEIPT'),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.symmetric(
-                                  vertical: 5, horizontal: 0),
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Container(
-                                    width: SCREENWIDTH * 0.45,
-                                    child: Text(
-                                        'Your slot has been booked for 16th June 2022 11:00-11:30 ',
-                                        style: TextStyle(
-                                            fontSize: 14,
-                                            fontWeight: FontWeight.w500)),
-                                  ),
-                                  Text(
-                                    'EXPIRED',
-                                    style: TextStyle(
-                                        fontSize: 14,
-                                        fontWeight: FontWeight.bold),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.symmetric(
-                                  vertical: 5, horizontal: 0),
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Container(
-                                    width: SCREENWIDTH * 0.45,
-                                    child: Text(
-                                      'Your slot has been booked for 20th Oct 2022, 16:15-16:45',
+              Stack(
+                fit: StackFit.loose,
+                clipBehavior: Clip.none,
+                alignment: Alignment.center,
+                children: [
+                  Positioned(
+                    right: -100,
+                    bottom: -200,
+                    child: Image.asset(line_image),
+                  ),
+                  const Positioned(
+                    bottom: -110,
+                    left: -100,
+                    child: circle(),
+                  ),
+                  BlurryContainer(
+                    blur: 10,
+                    color: CIRCLES,
+                    borderRadius: const BorderRadius.all(Radius.circular(20)),
+                    child: SizedBox(
+                      width: SCREENHEIGHT * 0.4,
+                      child: ListView(
+                        shrinkWrap: true,
+                        physics: const NeverScrollableScrollPhysics(),
+                        padding: const EdgeInsets.symmetric(
+                            vertical: 15, horizontal: 10),
+                        children: [
+                          const Text("Recent receipts",
+                              style: TextStyle(
+                                  fontSize: 21, fontWeight: FontWeight.bold)),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(
+                                vertical: 5, horizontal: 0),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                SizedBox(
+                                  width: SCREENWIDTH * 0.45,
+                                  child: const Text(
+                                      'Your slot has been booked for 23rd Oct 2022 12:00-12:30',
                                       style: TextStyle(
                                           fontSize: 14,
-                                          fontWeight: FontWeight.w500),
-                                    ),
-                                  ),
-                                  Text(
-                                    'EXPIRED',
+                                          fontWeight: FontWeight.w500)),
+                                ),
+                                TextButton(
+                                  onPressed: () {
+                                    Navigator.pushNamed(
+                                        context, '/show-receipt');
+                                  },
+                                  child: const Text('VIEW RECEIPT'),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(
+                                vertical: 5, horizontal: 0),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                SizedBox(
+                                  width: SCREENWIDTH * 0.45,
+                                  child: const Text(
+                                      'Your slot has been booked for 16th June 2022 11:00-11:30 ',
+                                      style: TextStyle(
+                                          fontSize: 14,
+                                          fontWeight: FontWeight.w500)),
+                                ),
+                                const Text(
+                                  'EXPIRED',
+                                  style: TextStyle(
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(
+                                vertical: 5, horizontal: 0),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                SizedBox(
+                                  width: SCREENWIDTH * 0.45,
+                                  child: const Text(
+                                    'Your slot has been booked for 20th Oct 2022, 16:15-16:45',
                                     style: TextStyle(
                                         fontSize: 14,
-                                        fontWeight: FontWeight.bold),
+                                        fontWeight: FontWeight.w500),
                                   ),
-                                ],
-                              ),
+                                ),
+                                const Text(
+                                  'EXPIRED',
+                                  style: TextStyle(
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                              ],
                             ),
-                            Padding(
-                              padding: const EdgeInsets.symmetric(
-                                  vertical: 5, horizontal: 0),
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  TextButton(
-                                    onPressed: () {
-                                      Navigator.pushNamed(
-                                          context, '/show-receipt');
-                                    },
-                                    child: const Text('VIEW ALL'),
-                                  ),
-                                ],
-                              ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(
+                                vertical: 5, horizontal: 0),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                TextButton(
+                                  onPressed: () {
+                                    Navigator.pushNamed(
+                                        context, '/show-receipt');
+                                  },
+                                  child: const Text('VIEW ALL'),
+                                ),
+                              ],
                             ),
-                          ],
-                        ),
-                        // height: SCREENHEIGHT * 0.4,
-                        width: SCREENHEIGHT * 0.4,
+                          ),
+                        ],
                       ),
-                      blur: 10,
-                      color: CIRCLES,
-                      borderRadius: const BorderRadius.all(Radius.circular(20)),
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
             ],
           ),
