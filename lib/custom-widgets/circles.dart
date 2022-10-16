@@ -16,7 +16,6 @@ class circle extends StatelessWidget {
       height: 180,
       elevation: 0,
       color: CIRCLES,
-      padding: const EdgeInsets.all(8),
       borderRadius: const BorderRadius.all(Radius.circular(180)),
     );
   }

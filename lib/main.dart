@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import './pages/captcha-page.dart';
 import 'package:flutter/material.dart';
 import './pages/home-page.dart';
@@ -17,17 +15,12 @@ void main() {
         textButtonTheme: TextButtonThemeData(
           style: TextButton.styleFrom(
             textStyle: TextStyle(
-              fontSize: 14,
               fontWeight: FontWeight.bold,
             ),
             primary: Colors.black,
           ),
         ),
         scaffoldBackgroundColor: BG,
-        textTheme: const TextTheme(
-          button: TextStyle(fontSize: 14.0, fontWeight: FontWeight.bold),
-          bodyText2: TextStyle(fontSize: 14.0, fontWeight: FontWeight.normal),
-        ),
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
             primary: ACCENTCOLOUR,
@@ -56,6 +49,8 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double SCREENWIDTH = MediaQuery.of(context).size.width;
+    double SCREENHEIGHT = MediaQuery.of(context).size.height;
     return MaterialApp(
       debugShowCheckedModeBanner: true,
       home: const HomePage(),
