@@ -12,15 +12,7 @@ class HomePage extends StatelessWidget {
     double SCREENWIDTH = MediaQuery.of(context).size.width;
     double SCREENHEIGHT = MediaQuery.of(context).size.height;
 
-    double one = SCREENHEIGHT * 0.001123236;
-    double two = SCREENHEIGHT * 0.002246472;
-    double three = SCREENHEIGHT * 0.003369707;
-    double four = SCREENHEIGHT * 0.004492943;
     double FIVE = SCREENHEIGHT * 0.005616179;
-    double six = SCREENHEIGHT * 0.006739415;
-    double seven = SCREENHEIGHT * 0.007862651;
-    double eight = SCREENHEIGHT * 0.008985887;
-    double nine = SCREENHEIGHT * 0.010109122;
     double TEN = SCREENHEIGHT * 0.011232358;
 
     return Scaffold(
@@ -38,7 +30,7 @@ class HomePage extends StatelessWidget {
                         child: Image.asset(cart_image),
                       ),
                       Padding(
-                        padding: EdgeInsets.only(bottom: TEN),
+                        padding: EdgeInsets.only(bottom: TEN * 2),
                         child: ElevatedButton(
                           onPressed: () {
                             Navigator.pushNamed(context, '/book-a-slot');

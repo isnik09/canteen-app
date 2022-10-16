@@ -20,17 +20,17 @@ class BACKGROUND extends StatelessWidget {
         Container(),
         Positioned(
           child: circle(),
-          top: TEN * 5,
-          left: TEN * 5,
+          top: TEN,
+          left: (TEN * 5),
         ),
         Positioned(
           child: circle(),
-          top: -(TEN * 3),
+          top: -(TEN * 5),
           left: TEN * 15,
         ),
         Positioned(
           child: circle(),
-          top: -(TEN * 12),
+          top: -(TEN * 15),
           left: TEN * 25,
         ),
         Positioned(
@@ -40,8 +40,8 @@ class BACKGROUND extends StatelessWidget {
         ),
         Positioned(
           child: circle(),
-          bottom: -(TEN * 8),
-          left: -(TEN * 6),
+          bottom: -(TEN * 7),
+          left: -(TEN * 7),
         )
       ],
     );

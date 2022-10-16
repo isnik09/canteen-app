@@ -11,9 +11,9 @@ class circle extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlurryContainer(
       child: Container(),
-      blur: 5,
-      width: 180,
-      height: 180,
+      blur: 3,
+      width: 200,
+      height: 200,
       elevation: 0,
       color: CIRCLES,
       borderRadius: const BorderRadius.all(Radius.circular(180)),
