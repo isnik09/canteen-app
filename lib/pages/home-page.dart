@@ -37,11 +37,14 @@ class HomePage extends StatelessWidget {
                         padding: EdgeInsets.only(top: (TEN * 5)),
                         child: Image.asset(cart_image),
                       ),
-                      ElevatedButton(
-                        onPressed: () {
-                          Navigator.pushNamed(context, '/book-a-slot');
-                        },
-                        child: const Text('Book appointment'),
+                      Padding(
+                        padding: EdgeInsets.only(bottom: TEN),
+                        child: ElevatedButton(
+                          onPressed: () {
+                            Navigator.pushNamed(context, '/book-a-slot');
+                          },
+                          child: const Text('Book appointment'),
+                        ),
                       ),
                       BlurryContainer(
                         blur: 10,
