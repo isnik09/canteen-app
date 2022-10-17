@@ -8,3 +8,4 @@ const captcha_image = 'assets/images/captcha.png';
 const card = 'assets/images/card.png';
 const card_image = 'assets/images/card_image.png';
 const date_image = 'assets/images/date.png';
+const receipt_image = 'assets/images/receipt.png';
